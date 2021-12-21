@@ -7,14 +7,14 @@ const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {
     event.preventDefault();
-    loginForm.classList.add(HIDDEN_CLASSNAME);
-    const username = loginInput.value;
-    localStorage.setItem(USERNAME_KEY, username);
-    paintGreetings();
+    loginForm.classList.add(HIDDEN_CLASSNAME); // 로그인 숨기기
+    const username = loginInput.value; // 입력값을 받음
+    localStorage.setItem(USERNAME_KEY, username); // 저장
+    paintGreetings(username); // 함수 실행 (글자 표시 함수)
 }
 function paintGreetings(username) {
     greeting.innerText = `hello ${username}`;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    greeting.classList.remove(HIDDEN_CLASSNAME); // 숨김 해제
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
