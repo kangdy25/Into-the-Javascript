@@ -13,7 +13,7 @@ function onLoginSubmit(event) {
     paintGreetings(username); // 함수 실행 (글자 표시 함수)
 }
 function paintGreetings(username) {
-    greeting.innerText = `God bless you~ ${username}`;
+    greeting.innerText = `God bless you!! ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME); // 숨김 해제
 }
 

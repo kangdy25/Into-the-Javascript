@@ -68,16 +68,16 @@ input::placeholder{
 }
 
 #todo-form {
-    width: 280px;
+    width: 250px;
     border: 5px solid #fff;
     position: absolute;
     top: 200px;
-    left: calc(97% - 280px);
+    left: calc(97% - 250px);
     opacity: 0.8;
 
 }
 #todo-form input{
-    width: 270px;
+    width: 240px;
     height: 50px;
     background: none;
     border: none;
@@ -85,6 +85,40 @@ input::placeholder{
     border: 3px solid #ccc;
     color: #fff;
     text-align: center;
+}
+
+#todo-list {
+    
+    position: absolute;
+    top: 280px;
+    left: calc(97% - 250px);
+    color: #fff;
+    border: 3px solid #ddd;
+    width: 210px;
+    height: 270px;
+    border-radius: 15px;
+    list-style: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+#todo-list li {
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #efefef;
+    font-size: 17px;
+}
+
+#todo-list li::before {
+    content: ">";
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 5px 6px 0px;
+}
+
+#todo-list li:last-child {
+    border: none;
 }
 
 
@@ -111,7 +145,7 @@ input::placeholder{
     color: #000;
     font-weight: bold;
     font: 17px/1.5;
-    background-color: #bbb;
+    background-color: #ccc;
     border: 5px solid #fff;
     border-style: ridge;
     opacity: 0.7;
