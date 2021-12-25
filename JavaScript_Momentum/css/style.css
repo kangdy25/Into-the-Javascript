@@ -8,7 +8,8 @@ img {
     right:0px;
     bottom:0px;
     z-index: -1;
-    opacity:100%;
+    /* opacity:95%; */
+    filter: brightness(0.7);
 
 }
 
@@ -17,46 +18,49 @@ img {
 }
 
 #clock {
-    display: flex;
-    justify-content: center;
+    position: relative;
+    left: calc(50% - 250px);
     border-bottom: 3px solid #ddd; 
-    /* border: 10px solid #fff; */
+    width: 500px;
+    border: 10px solid #fff;
     margin-top: 200px;
     font-size: 125px ;
     font-family: "arial";
     color: #fff;
+    border-radius: 20px;
 }
 
 
 #login-form {
     padding: 30px;
     /* border: 10px solid #fff; */
-    
 }
 
-#login-form .icon {
+/* #login-form .icon {
     color: #fff;
     position: absolute;
-    /* top: 50%;  */
+
     font-size: 25px;
     margin-left: 15px;
     margin-top: 13px;
     z-index: 1;
     
+} */
+input::placeholder{
+    color: #ddd;
 }
 
 #login-form input {
-
-    display: flex;
-    justify-content: center;
     position: relative;
+    left: calc(57% - 250px);
     width: 300px;
-    height: 60px;
+    height: 50px;
     background: none;
     border: none;
     font-size: 20pt;
     padding-left: 50px;
     border-bottom: 3px solid #fff;
+    
     color: #fff;
     
 }
@@ -66,29 +70,39 @@ img {
 }
 
 #greeting {
-    display: flex;
-    align-content: center;
     /* border: 10px solid #fff; */
     text-align: center;
-    
+    position: relative;
+    top: 50px;
     font-size: 50px;
     font-family: "arial";
     color: #fff;
 }
 
 #quote {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    border: 10px solid #fff;
-    /* width: 700px; */
-    
+    position: absolute;
+    width: 620px;
+    top: 80%;
+    left: calc(50% - 310px);
+    border: 5px solid rgb(255, 255, 255);
     text-align: center; 
-    font: 20px/1.5 "arial";
+    font: 18px/1.4 "arial";
     color: #fff;
-    background: linear-gradient(45deg, rgb(255, 80, 80), rgb(108, 108, 253) );
+    padding: 7px;
+    
 }
 
 #weather {
-    color: #fff;
+    position: absolute;
+    width: 200px;
+    top: 30px;
+    left: calc(100% - 300px);
+    padding: 20px;
+    color: #000;
+    font-weight: bold;
+    font: 17px/1.5;
+    background-color: #bbb;
+    border: 5px solid #fff;
+    border-style: ridge;
+    opacity: 0.7;
 }
