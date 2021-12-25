@@ -12,7 +12,7 @@ function onGeoSuccess(position) {
             const city = document.querySelector("#weather span:last-child");
 
             city.innerText = `City: ${data.name}`;
-            weather.innerText = `Weather: ${data.weather[0].main} / ${data.main.temp}`;
+            weather.innerText = `Weather: ${data.weather[0].main} / ${Math.round(data.main.temp)}℃`;
     });
 }
 function onGeoError() {

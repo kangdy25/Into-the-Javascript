@@ -1,6 +1,9 @@
 const img = [
     "christmas1.jpg", 
-    // "winter1.webp"
+    "christmas2.webp",
+    "christmas3.webp",
+    "christmas4.webp"
+    
 ]
 
 const chooseImg = img[Math.floor(Math.random() * img.length)];

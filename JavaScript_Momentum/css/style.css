@@ -106,7 +106,7 @@ input::placeholder{
     padding: 5px 0px 5px 0px;
     margin-bottom: 5px;
     border-bottom: 1px solid #efefef;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 #todo-list li::before {
