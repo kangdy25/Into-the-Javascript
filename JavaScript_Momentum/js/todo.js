@@ -22,11 +22,17 @@ function paintTodo(newTodo) {
     make_li.id = newTodo.id;
     const make_span = document.createElement("span");
     make_span.innerText = newTodo.text;
-    const make_button = document.createElement("button");
-    make_button.innerText = "X"
-    make_button.addEventListener("click", deleteTodo)
+    const make_button1 = document.createElement("button");
+    make_button1.id = 'FailButton';
+    make_button1.innerText = "X"
+    make_button1.addEventListener("click", deleteTodo);
+    const make_button2 = document.createElement("button");
+    make_button2.id = 'SuccessButton';
+    make_button2.innerText = "👍";
+    make_button2.addEventListener("click", deleteTodo);
     make_li.appendChild(make_span);
-    make_li.appendChild(make_button);
+    make_li.appendChild(make_button1);
+    make_li.appendChild(make_button2);
     todoList.appendChild(make_li);
 }
 
