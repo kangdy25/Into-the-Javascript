@@ -33,26 +33,15 @@ img {
 
 #login-form {
     padding: 30px;
-    /* border: 10px solid #fff; */
 }
 
-/* #login-form .icon {
-    color: #fff;
-    position: absolute;
-
-    font-size: 25px;
-    margin-left: 15px;
-    margin-top: 13px;
-    z-index: 1;
-    
-} */
 input::placeholder{
     color: #ddd;
 }
 
 #login-form input {
     position: relative;
-    left: calc(57% - 250px);
+    left: calc(56% - 270px);
     width: 300px;
     height: 50px;
     background: none;
@@ -70,7 +59,6 @@ input::placeholder{
 }
 
 #greeting {
-    /* border: 10px solid #fff; */
     text-align: center;
     position: relative;
     top: 50px;
@@ -78,6 +66,28 @@ input::placeholder{
     font-family: "arial";
     color: #fff;
 }
+
+#todo-form {
+    width: 280px;
+    border: 5px solid #fff;
+    position: absolute;
+    top: 200px;
+    left: calc(97% - 280px);
+    opacity: 0.8;
+
+}
+#todo-form input{
+    width: 270px;
+    height: 50px;
+    background: none;
+    border: none;
+    font-size: 17px;
+    border: 3px solid #ccc;
+    color: #fff;
+    text-align: center;
+}
+
+
 
 #quote {
     position: absolute;
