@@ -7,13 +7,13 @@
 
 - - -
 ## JavaScript Deep Dive (기초부터 심화까지)
- *[Ch 1. 변수(Variable)](https://tropical-pasta-efb.notion.site/01-Variable-792ee943eaba4b8193724312c772d0a8)
+ * [Ch 1. 변수(Variable)](https://tropical-pasta-efb.notion.site/01-Variable-792ee943eaba4b8193724312c772d0a8)
 
 
 - - -
 ## JavaScript Project (실전 프로젝트)
- *[Momentum - Project](https://kangdy25.github.io/StudyWithMe_Javascript/JavaScript_Momentum/index.html)
- *[그림판 - Project](https://kangdy25.github.io/StudyWithMe_Javascript/JavaScript_Paint/index.html)
-
+ * [Momentum - Project](https://kangdy25.github.io/StudyWithMe_Javascript/JavaScript_Momentum/index.html)
+ * [그림판 - Project](https://kangdy25.github.io/StudyWithMe_Javascript/JavaScript_Paint/index.html)
+ 
 
 - - -
