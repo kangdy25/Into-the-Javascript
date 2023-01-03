@@ -1,8 +1,16 @@
-# StudyWithMe_Javascript
-바닐라자바스크립트를 공부해봅시다!!
+JavaScript 
 
-### 1) JavaScript 기초 문법 공부하기
+## 🎯 학습 목표 🎯
+웹프로그래밍에 필수적인 자바스크립트를 학습합니다. 기초부터 심화까지 자바스크립트에서 필수적인 모든 부분을 학습하여 자바스크립트의 개념과 동작 원리를 이해하도록 합니다. 또한 실제 프로젝트를 진행하며 자바스크립트의 이해도를 더욱 높이도록 합니다.
 
-### 2) JavaScript 심화 문법 공부하기 (with 모던 자바스크립트 Deep Dive)
+- - -
+## JavaScript Deep Dive
+ 
 
-### 3) Vanilla JavaScript 응용하여 사이드 프로젝트 진행하기
+
+- - -
+## JavaScript Project
+
+
+
+- - -
