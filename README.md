@@ -9,6 +9,7 @@
 ## JavaScript Deep Dive (기초부터 심화까지)
 ### [Ch 1. 변수(Variable)](https://tropical-pasta-efb.notion.site/01-Variable-792ee943eaba4b8193724312c772d0a8)
 ### [Ch 2. 표현식과 문(Expression & Statement)](https://tropical-pasta-efb.notion.site/02-9e02ef9f0d9a47d3a54894dde6de1194)
+### [Ch 3. 데이터 타입(Data Type)](https://tropical-pasta-efb.notion.site/03-Data-Type-d8d29fc2c8884674acb0e792f53d9a4c)
 
 - - -
 ## JavaScript Project (실전 프로젝트)
