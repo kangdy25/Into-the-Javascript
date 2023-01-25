@@ -12,6 +12,7 @@
 ### [Ch 3. 데이터 타입(Data Type)](https://tropical-pasta-efb.notion.site/03-Data-Type-d8d29fc2c8884674acb0e792f53d9a4c)
 ### [Ch 4. 연산자(Operator)](https://tropical-pasta-efb.notion.site/04-Operator-2ed8775f5f984d229bf4ad3f1fe50890)
 ### [Ch 5. 제어문(Control Flow Statement)](https://tropical-pasta-efb.notion.site/05-Control-Flow-Statement-5f42066ee67e4900a970d7d3679ff2cc)
+### [Ch 6. 타입 변환과 단축 평가 (Type Conversions & Short-Circuit Evaluation)](https://tropical-pasta-efb.notion.site/06-Type-Conversions-Short-Circuit-Evaluation-edf628656b63438fa10a950958af121d)
 
 - - -
 ## JavaScript Project (실전 프로젝트)
