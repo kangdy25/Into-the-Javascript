@@ -8,16 +8,31 @@
 </head>
 <body>
     <h1 id="hello">안녕하세요</h1>
-    <button onclick="document.getElementById('ang').style.display = 'block'">버튼</button>
-    <div class="alert-box" id="ang">알림창임
-        <button onclick="document.getElementById('ang').style.display = 'none'">닫기</button>
+    <h3>Alert 박스 생성기</h3>
+    <button onclick="ctrlAlert('block')">알림창 버튼</button>
+    <button onclick="ctrlInput('아이디')">아이디</button>
+    <button onclick="ctrlInput('비밀번호')">비밀번호</button>
+    <div class="alert-box" id="title">알림창임
+        <button onclick="ctrlAlert('none')">닫기</button>
     </div>
-    <script>
-        document.getElementById('hello').innerHTML = 'JS 고수에요'
-        document.getElementById('hello').style.color = 'red'
-        document.getElementById('hello').style.textAlign = 'center'
-        document.getElementById('hello').style.fontSize = '16px'
+    <hr/>
     
+
+    <script>
+        document.getElementById('hello').innerHTML = 'Javascript는 론나 잘합니다'
+        document.getElementById('hello').style.color = '#0047AB'
+        document.getElementById('hello').style.textAlign = 'center'
+        document.getElementById('hello').style.fontSize = '32px'
+        
+        function ctrlAlert(status) {
+            document.getElementById('title').innerHTML = '알림창임'
+            document.getElementById('title').style.display = status;
+        }
+
+        function ctrlInput(status) {
+            document.getElementById('title').innerHTML = status + ' 내놔'
+            document.getElementById('title').style.display = 'block';
+        }
     </script>
 </body>
 </html>

@@ -5,6 +5,7 @@
     color: white;
     border-radius: 5px;
     display: none;
+    margin-top: 10px;
 } 
 
 .alert-box button {
