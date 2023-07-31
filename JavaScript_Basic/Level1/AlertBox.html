@@ -4,35 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="main.css" rel="stylesheet">
+    <script
+    src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+    crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
+    
+    <button id="login">로그인</button>
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <button id="closeBtn">닫기</button>
+        </div>
+    </div> 
+
+
     <h1 id="hello">안녕하세요</h1>
     <h3>Alert 박스 생성기</h3>
     <button onclick="ctrlAlert('block')">알림창 버튼</button>
     <button onclick="ctrlInput('아이디')">아이디</button>
     <button onclick="ctrlInput('비밀번호')">비밀번호</button>
-    <div class="alert-box" id="title">알림창임
-        <button onclick="ctrlAlert('none')">닫기</button>
+    <div class="alert-box" id="title">
+        <p id="text">알림창임</p>
+        <button id="close">닫기</button>
     </div>
     <hr/>
+    <p class="hello">안녕</p>
+    <p class="hello">안녕</p>
+    <p class="hello">안녕</p>
+    <button id="test-btn">버튼</button>
+    <hr>
     
 
     <script>
-        document.getElementById('hello').innerHTML = 'Javascript는 론나 잘합니다'
-        document.getElementById('hello').style.color = '#0047AB'
-        document.getElementById('hello').style.textAlign = 'center'
-        document.getElementById('hello').style.fontSize = '32px'
+        $('#login').on('click', ()=>{
+            $('.black-bg').fadeIn()
+            $('#login').hide()
+        })
+        $('#closeBtn').on('click', ()=>{
+            $('.black-bg').fadeOut()
+            $('#login').fadeIn()
+        })
+
+        document.querySelector('#hello').innerHTML = 'Javascript는 론나 잘합니다'
+        document.querySelector('#hello').style.color = '#0047AB'
+        document.querySelector('#hello').style.textAlign = 'center'
+        document.querySelector('#hello').style.fontSize = '32px'
         
         function ctrlAlert(status) {
-            document.getElementById('title').innerHTML = '알림창임'
-            document.getElementById('title').style.display = status;
+            document.querySelectorAll('#text')[0].innerHTML = '알림창임'
+            document.querySelector('#title').style.display = status;
         }
-
+        
         function ctrlInput(status) {
-            document.getElementById('title').innerHTML = status + ' 내놔'
-            document.getElementById('title').style.display = 'block';
+            document.querySelectorAll('#text')[0].innerHTML = status + ' 내놔'
+            document.querySelector('#title').style.display = 'block';
         }
+        document.getElementById('close').addEventListener('click', function() {
+            document.getElementById('title').style.display = 'none';
+        })
+
+        document.getElementsByClassName('hello')[0].innerHTML = '밥통'
+        document.getElementsByClassName('hello')[1].innerHTML = '히히'
+        document.getElementsByClassName('hello')[2].innerHTML = '메롱'
+
+        $('.hello').html('사랑해');
+
+        $('#test-btn').on('click', function() {
+            $('.hello').slideUp()
+        })
+
+
     </script>
 </body>
 </html>

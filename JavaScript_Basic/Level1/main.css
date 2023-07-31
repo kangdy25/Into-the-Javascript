@@ -8,7 +8,7 @@
     margin-top: 10px;
 } 
 
-.alert-box button {
+#close {
     position: absolute;
     display: block;
     right: 10px;
@@ -20,3 +20,18 @@
     background-color: white;
     cursor: pointer;
 }
+
+.black-bg {
+    display: none;
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.75);
+    z-index : 5;
+    padding: 30px;
+}
+  .white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+} 
