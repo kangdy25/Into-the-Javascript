@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="main.css" rel="stylesheet">
+    <link href="Level1.css" rel="stylesheet">
     <script
     src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
@@ -40,12 +40,10 @@
 
     <script>
         $('#login').on('click', ()=>{
-            $('.black-bg').fadeIn()
-            $('#login').hide()
+            $('.black-bg').addClass('show-modal')
         })
         $('#closeBtn').on('click', ()=>{
-            $('.black-bg').fadeOut()
-            $('#login').fadeIn()
+            $('.black-bg').removeClass('show-modal')
         })
 
         document.querySelector('#hello').innerHTML = 'Javascript는 론나 잘합니다'
