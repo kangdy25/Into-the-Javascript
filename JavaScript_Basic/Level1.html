@@ -37,6 +37,21 @@
     <button id="test-btn">버튼</button>
     <hr>
     
+    <form id="sign" action="success.html">
+        <div class="my-3">
+            <input placeholder="id를 입력하세요" 
+                    type="text" 
+                    class="form-control">
+        </div>
+        <div class="my-3">
+            <input placeholder="pw를 입력하세요"
+                type="password" 
+                class="form-control">
+        </div>
+        <button type="submit" class="submit-btn" onclick="checkValue()">전송</button>
+        <button type="button" class="close-btn" id="close">닫기</button>
+    </form> 
+
 
     <script>
         $('#login').on('click', ()=>{
@@ -74,6 +89,12 @@
             $('.hello').slideUp()
         })
 
+        document.getElementById('sign').addEventListener('submit', (e)=>{
+            if (document.querySelector('.form-control').value === '') {
+                alert('값이 없노...');
+                e.preventDefault();
+            }
+        })
 
     </script>
 </body>
