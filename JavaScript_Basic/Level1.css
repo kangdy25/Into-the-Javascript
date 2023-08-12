@@ -60,3 +60,13 @@
     width: 50px;
     cursor: pointer;
 }
+
+.dark-btn {
+    border: 3px solid rgb(192, 101, 101);
+    border-radius: 10px;
+    color: #333;
+    background-color: #fff;
+    padding: 5px;
+    width: 100px;
+    cursor: pointer;
+}

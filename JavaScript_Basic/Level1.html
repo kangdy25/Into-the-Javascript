@@ -10,8 +10,9 @@
     crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<body>
-    
+    <h1 id="hello">안녕하세요</h1>
+    <hr/>
+    <h3>모달창 생성기</h3>
     <button id="login">로그인</button>
     <div class="black-bg">
         <div class="white-bg">
@@ -19,9 +20,8 @@
             <button id="closeBtn">닫기</button>
         </div>
     </div> 
+    <hr/>
 
-
-    <h1 id="hello">안녕하세요</h1>
     <h3>Alert 박스 생성기</h3>
     <button onclick="ctrlAlert('block')">알림창 버튼</button>
     <button onclick="ctrlInput('아이디')">아이디</button>
@@ -31,13 +31,14 @@
         <button id="close">닫기</button>
     </div>
     <hr/>
+    <h3>슬라이드 애니메이션</h3>
     <p class="hello">안녕</p>
     <p class="hello">안녕</p>
     <p class="hello">안녕</p>
     <button id="test-btn">버튼</button>
     <hr>
-    
-    <form id="sign" action="success.html">
+    <h3>ID PW 입력소</h3>
+    <form id="sign" action="Level1_form.html">
         <div class="my-3">
             <input placeholder="id를 입력하세요" 
                     type="text" 
@@ -53,7 +54,10 @@
         <button type="submit" class="submit-btn" onclick="checkValue()">전송</button>
         <button type="button" class="close-btn" id="close">닫기</button>
     </form> 
-
+    <hr/>
+    <h3>다크모드 버튼</h3>
+    <button class="dark-btn">Dark 🔄</button>
+    <hr/>
 
     <script>
         $('#login').on('click', ()=>{
@@ -101,9 +105,18 @@
                 alert('더 길게 짜셈;;')
                 e.preventDefault();
             }
-
         })
 
+        let count = 0;
+        document.querySelector('.dark-btn').addEventListener('click', ()=>{
+            if (count % 2 === 0) {
+                document.querySelector('.dark-btn').innerText = 'Light임';
+                count++;
+            } else if (count % 2 === 1) {
+                document.querySelector('.dark-btn').innerText = 'Dark임';
+                count++;
+            }
+        })
     </script>
 </body>
 </html>

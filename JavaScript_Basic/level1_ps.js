@@ -1,5 +1,3 @@
-const { type } = require("express/lib/response");
-
 function samyukgo(number) {
     if (number % 9 === 0) {
         console.log('박수 2번 ㄱㄱ');
