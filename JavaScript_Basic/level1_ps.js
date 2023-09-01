@@ -21,5 +21,29 @@ function hapkyuk(garon, minbup) {
             } 
         } 
     }
-
 }
+
+let age = 23;
+const location = '길동';
+
+// let deposit = 60000;
+
+function Calc(depositFuture, year) {
+    if (depositFuture < 50000) {
+        for (let i = 0; i < year; i++) {
+            depositFuture *= 1.15;
+        }
+    } else {
+        for (let i = 0; i < year; i++) {
+            depositFuture *= 1.2;
+        }
+    }
+    console.log(depositFuture);
+}
+Calc(60000, 2)
+
+function Coffee(first) {
+    refill = first * 19 / 9;
+    console.log(refill);
+}
+

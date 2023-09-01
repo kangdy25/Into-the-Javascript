@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <p>태조 이성계가 태어난 년도는?</p>
+    <form action="" id="history">
+        <input type="text" id="answer">
+        <button id="send-answer">제출</button>
+    </form>
+
+    <script>
+        let count = 0;
+        document.querySelector('#history').addEventListener('submit', (e)=>{
+            count++;
+            let answer = document.querySelector('#answer').value;
+            console.log(answer);
+            e.preventDefault();
+            if (answer === '1335') {
+                alert('성공');
+                count--;
+            } else if (count >= 3 && answer !== '1335') {
+                alert('멍청아');
+            }
+        })  
+    </script>
+</body>
+</html>
