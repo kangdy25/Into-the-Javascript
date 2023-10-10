@@ -17,5 +17,5 @@
 * [let, const 키워드와 블록 레벨 스코프](https://kangdy25.tistory.com/154)
 * [프로퍼티 어트리뷰트 (Property Attribute)](https://kangdy25.tistory.com/155)
 * [생성자 함수에 의한 객체 생성](https://kangdy25.tistory.com/156)
-
+* [함수와 일급 객체(Function and First-Class Object)](https://kangdy25.tistory.com/157)
 - - -
