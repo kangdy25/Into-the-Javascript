@@ -14,6 +14,16 @@
     <div class="danger">
         <span class="count">5</span>초 이내 구매 시 사은품 증정!!
     </div>
+    <form action="Success.html" class="form">
+        <div>
+            <input type="text" class="form-control" id="email">
+        </div>
+        <div>
+            <input type="password" class="form-control" id="password">
+        </div>
+        <button type="submit" class="btn-primary" id="send">전송</button>
+        <button type="button" class="btn-danger" id="close">닫기</button>
+    </form>
 </body>
 <script>
     // setTimeout(() => {
@@ -30,5 +40,19 @@
             $('.danger').hide();
         } 
     }, 1000);
+
+    $('form').on('submit', ()=>{
+        let checkEmail = document.getElementById('email').value;
+        let checkPassword = document.getElementById('password').value;
+        if(checkEmail === '') {
+            alert('아이디 입력 안하심 ㅅㄱ');
+        }
+        if (/\S+@\S+\.\S+/.test(checkEmail)) {
+            alert('이메일 형식 아님 ㅅㄱ');
+        }
+        if (/[A-Z]/.test(checkPassword) === true) {
+            alert('비번에 대문자 있노 ㅅㄱ');
+        }
+    })
 </script>
 </html>
