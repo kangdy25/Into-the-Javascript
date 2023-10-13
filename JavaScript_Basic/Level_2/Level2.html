@@ -11,6 +11,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 시간에 따라 사라지는 UI 박스 -->
     <div class="danger">
         <span class="count">5</span>초 이내 구매 시 사은품 증정!!
     </div>
@@ -24,6 +25,30 @@
         <button type="submit" class="btn-primary" id="send">전송</button>
         <button type="button" class="btn-danger" id="close">닫기</button>
     </form>
+    <!-- 캐러셀 만들기 -->
+    <div style="overflow: hidden">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="car1.png">
+            </div>
+            <div class="slide-box">
+                <img src="car2.png">
+            </div>
+            <div class="slide-box">
+                <img src="car3.png">
+            </div>
+        </div>
+    </div> 
+    <div class="btn-slide">
+        <button class="before">이전</button>
+
+        <button class="slide-1">1</button>
+        <button class="slide-2">2</button>
+        <button class="slide-3">3</button>
+
+        <button class="after">다음</button>
+
+    </div>
 </body>
 <script>
     // setTimeout(() => {
@@ -53,6 +78,25 @@
         if (/[A-Z]/.test(checkPassword) === true) {
             alert('비번에 대문자 있노 ㅅㄱ');
         }
+    })
+    // 캐러셀 이동 버튼 기능
+    $('.slide-1').on('click', ()=>{
+        $('.slide-container').css('transform', 'translateX(0)');
+    })
+    $('.slide-2').on('click', ()=>{
+        $('.slide-container').css('transform', 'translateX(-100vw)');
+    })
+    $('.slide-3').on('click', ()=>{
+        $('.slide-container').css('transform', 'translateX(-200vw)');
+    })
+    var Picture = 1;
+    $('.after').on('click', function(){
+        $('.slide-container').css('transform', 'translateX(-' + Picture + '00vw)');
+        Picture += 1;
+    })
+    $('.before').on('click', function(){
+        $('.slide-container').css('transform', 'translateX(-' + Picture + '00vw)');
+        Picture -= 1;
     })
 </script>
 </html>
