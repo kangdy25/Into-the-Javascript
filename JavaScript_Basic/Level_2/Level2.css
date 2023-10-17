@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .danger {
     border: 3px solid blue;
     background: linear-gradient(45deg, red, black);
@@ -6,6 +10,38 @@
     text-align: center;
     font-size: 34px;
 }
+
+.inner {
+    display: flex;
+    justify-content: space-around;
+    background: #000;
+    width: 100%;
+    position: fixed;
+    margin: 0 auto;
+    z-index: 3;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 40px;
+    transition: all 1s;
+}
+ul {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    list-style: none;
+    margin: 10px;
+}
+li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
 
 .form {
     display: flex;

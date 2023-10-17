@@ -11,6 +11,18 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 내비게이션 바 -->
+    <div class="inner">
+        <div class="logo">logo</div>
+        <nav role='navigation'>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>  
+    </div>
     <!-- 시간에 따라 사라지는 UI 박스 -->
     <div class="danger">
         <span class="count">5</span>초 이내 구매 시 사은품 증정!!
@@ -49,6 +61,21 @@
         <button class="after">다음</button>
 
     </div>
+    <div class="lorem" style=" height: 100px; overflow-y: scroll; 
+    display: flex; justify-content: center; margin: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Assumenda eum ipsum, similique tempora autem pariatur, 
+        ut molestiae iure sapiente repellat deleniti, 
+        sed quasi incidunt sint ipsa quisquam repudiandae saepe animi.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Assumenda eum ipsum, similique tempora autem pariatur, 
+        ut molestiae iure sapiente repellat deleniti, 
+        sed quasi incidunt sint ipsa quisquam repudiandae saepe animi.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Assumenda eum ipsum, similique tempora autem pariatur, 
+        ut molestiae iure sapiente repellat deleniti, 
+        sed quasi incidunt sint ipsa quisquam repudiandae saepe animi.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Assumenda eum ipsum, similique tempora autem pariatur, 
+        ut molestiae iure sapiente repellat deleniti, 
+        sed quasi incidunt sint ipsa quisquam repudiandae saepe animi.</div>
+    <div style="height: 1000px; margin-top: 50px; border: 5px solid red"></div>
 </body>
 <script>
     // setTimeout(() => {
@@ -114,6 +141,25 @@
             $('.slide-container').css('transform', `translateX(${translate}vw)`)
         }
         console.log('현재 슬라이드 ' + currentSlide)
+    })
+
+    // 스크롤 시 폰트 사이즈 변경
+    window.addEventListener('scroll', ()=>{
+        if (window.scrollY > 300) {
+            $('.logo').css('font-size', '10px')
+        } else {
+            $('.logo').css('font-size', '40px')
+        }
+    })
+    // div의 스크롤바 내린 양 + 눈에 보이는 div 높이 == div의 실제 높이
+    document.querySelector('.lorem').addEventListener('scroll', ()=>{
+        let scrollAmount = document.querySelector('.lorem').scrollTop; // 현재 페이지 스크롤양
+        let Height = document.querySelector('.lorem').clientHeight; // 현재 웹페이지 보이는 높이
+        let scrollHeight = document.querySelector('.lorem').scrollHeight;
+        console.log(scrollAmount, Height, scrollHeight)
+        if (scrollAmount + Height == scrollHeight) {
+            alert('다 읽었노')
+        }
     })
 </script>
 </html>
