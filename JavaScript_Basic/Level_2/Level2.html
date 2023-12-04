@@ -78,32 +78,39 @@
     <div style="height: 1000px; margin-top: 50px; border: 5px solid red"></div>
 </body>
 <script>
+    
+    // setTimeout을 이용한 타이머 기능
     // setTimeout(() => {
     //     $('.danger').hide();
     // }, 5000);
 
+    // setInterval을 이용한 카운트다운 기능
     let count = document.querySelector('.count').innerHTML;
     setInterval(() => {
-        if (count !== 0) {
+        if (count !== 1) {
             count = count - 1;
             document.querySelector('.count').innerHTML = count;
         } 
-        else if (count === 0) {
+        else if (count === 1) {
             $('.danger').hide();
         } 
     }, 1000);
 
-    $('form').on('submit', ()=>{
+    // 정규표현식을 이용한 아이디 비번 형식 검사
+    $('form').on('submit', (e)=>{
         let checkEmail = document.getElementById('email').value;
         let checkPassword = document.getElementById('password').value;
         if(checkEmail === '') {
             alert('아이디 입력 안하심 ㅅㄱ');
+            e.preventDefault();
         }
         if (/\S+@\S+\.\S+/.test(checkEmail)) {
             alert('이메일 형식 아님 ㅅㄱ');
+            e.preventDefault();
         }
         if (/[A-Z]/.test(checkPassword) === true) {
             alert('비번에 대문자 있노 ㅅㄱ');
+            e.preventDefault();
         }
     })
 
