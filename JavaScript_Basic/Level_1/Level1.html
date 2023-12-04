@@ -116,6 +116,17 @@
                 count++;
             }
         })
+
+        // 이벤트 버블링 (모달창 닫기 기능)
+        document.querySelector('.black-bg').addEventListener('click', function(e){
+            // e.target : 유저가 실제로 누른거
+            // e.currentTarget : 이벤트리스너가 달린 곳 (this)
+            // e.preventDefault() : 이벤트 기본 동작 방지
+            // e.stopPropagation() : 내 상위 요소로 이벤트 버블링 막아줌
+            if (e.target === document.querySelector('.black-bg')) {
+                document.querySelector('.black-bg').classList.remove('show-modal');
+            }
+        })
     </script>
 </body>
 </html>

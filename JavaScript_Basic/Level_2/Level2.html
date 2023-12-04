@@ -23,6 +23,7 @@
             </ul>
         </nav>  
     </div>
+    <div style="height: 73px;">.</div>
     <!-- 시간에 따라 사라지는 UI 박스 -->
     <div class="danger">
         <span class="count">5</span>초 이내 구매 시 사은품 증정!!
@@ -75,10 +76,26 @@
         Assumenda eum ipsum, similique tempora autem pariatur, 
         ut molestiae iure sapiente repellat deleniti, 
         sed quasi incidunt sint ipsa quisquam repudiandae saepe animi.</div>
-    <div style="height: 1000px; margin-top: 50px; border: 5px solid red"></div>
+    <div style="height: 500px; margin: 100px 0; border: 5px solid red"></div>
+    <div class="container mt-5">
+        <ul class="list">
+            <li class="tab-button" data-id="0">Products</li>
+            <li class="tab-button orange" data-id="1">Information</li>
+            <li class="tab-button" data-id="2">Shipping</li>
+        </ul>
+        <div class="tab-content">
+            <p>상품설명입니다. Product</p>
+        </div>
+        <div class="tab-content show">
+            <p>스펙설명입니다. Information</p>
+        </div>
+        <div class="tab-content">
+            <p>배송정보입니다. Shipping</p>
+        </div>
+    <div style="height: 500px; margin: 100px 0; border: 5px solid blue"></div>
+</div> 
 </body>
 <script>
-    
     // setTimeout을 이용한 타이머 기능
     // setTimeout(() => {
     //     $('.danger').hide();
@@ -114,59 +131,8 @@
         }
     })
 
-    // 캐러셀 슬라이드 디폴트 세팅
-    const slide = $('.slide-box');
-    let currentSlide = 0;
-
-    // 캐러셀 숫자별 이동 버튼 기능
-    function ToSlide(e) {
-        const index = (e.target.getAttribute('data-index'));
-        currentSlide = index;
-        let translate = -100 * currentSlide;
-        $('.slide-container').css('transform', `translateX(${translate}vw)`);
-        console.log('현재 슬라이드 ' + currentSlide);
-    }
-    //  넘버 버튼 클릭 시 캐러셀 이동
-    let slideBtn = document.querySelectorAll('.slide-btn');
-    slideBtn.forEach(btn => {
-        btn.addEventListener('click', ToSlide);
-    })
-    
-    // 캐러셀 이전, 다음 버튼 기능
-    $('.after').on('click', ()=>{
-        if (currentSlide < slide.length - 1) {
-            currentSlide++;
-            let translate = -100 * currentSlide;
-            $('.slide-container').css('transform', `translateX(${translate}vw)`)
-        }
-        console.log('현재 슬라이드 ' + currentSlide)
-    })
-    $('.before').on('click', ()=>{
-        if (0 < currentSlide) {
-            currentSlide--;
-            let translate = -100 * currentSlide;
-            $('.slide-container').css('transform', `translateX(${translate}vw)`)
-        }
-        console.log('현재 슬라이드 ' + currentSlide)
-    })
-
-    // 스크롤 시 폰트 사이즈 변경
-    window.addEventListener('scroll', ()=>{
-        if (window.scrollY > 300) {
-            $('.logo').css('font-size', '10px')
-        } else {
-            $('.logo').css('font-size', '40px')
-        }
-    })
-    // div의 스크롤바 내린 양 + 눈에 보이는 div 높이 == div의 실제 높이
-    document.querySelector('.lorem').addEventListener('scroll', ()=>{
-        let scrollAmount = document.querySelector('.lorem').scrollTop; // 현재 페이지 스크롤양
-        let Height = document.querySelector('.lorem').clientHeight; // 현재 웹페이지 보이는 높이
-        let scrollHeight = document.querySelector('.lorem').scrollHeight;
-        console.log(scrollAmount, Height, scrollHeight)
-        if (scrollAmount + Height == scrollHeight) {
-            alert('다 읽었노')
-        }
-    })
 </script>
+<script src="Carousel.js"></script>
+<script src="Scroll.js"></script>
+<script src="Tab.js"></script>
 </html>
