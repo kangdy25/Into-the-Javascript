@@ -5,7 +5,7 @@ body {
 .danger {
     display: block;
     position: relative;
-    top: 70px;
+    /* top: 70px; */
     width: 100%;
     /* border: 3px solid blue; */
     background: linear-gradient(45deg, red, black);
@@ -46,49 +46,9 @@ li a {
     color: #fff;
 }
 
-<<<<<<< HEAD
-=======
-ul.list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-bottom: 1px solid #ccc;
-  }
-  ul.list::after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-  .tab-button {
-    display: block;
-    padding: 10px 20px 10px 20px;
-    float: left;
-    margin-right: -1px;
-    margin-bottom: -1px;
-    color: grey;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .orange {
-    border-top: 2px solid orange;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid white;
-    border-left: 1px solid #ccc;
-    color: black;
-    margin-top: -2px;
-  }
-  .tab-content {
-    display: none;
-    padding: 10px;
-  }
-  .show {
-    display: block;
-  }
-
->>>>>>> refs/remotes/origin/master
 .form {
     position: relative;
-    top: 70px;
+    /* top: 70px; */
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -157,3 +117,40 @@ ul.list {
 .slide-box img {
     width: 100%;
 } 
+
+ul.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+  }
+  ul.list::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .tab-button {
+    display: block;
+    padding: 10px 20px 10px 20px;
+    float: left;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .orange {
+    border-top: 2px solid orange;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid white;
+    border-left: 1px solid #ccc;
+    color: black;
+    margin-top: -2px;
+  }
+  .tab-content {
+    display: none;
+    padding: 10px;
+  }
+  .show {
+    display: block;
+  }
