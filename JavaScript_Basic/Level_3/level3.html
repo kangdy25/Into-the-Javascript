@@ -60,22 +60,27 @@
             </div>
         </div>
     </div>
-    <script>
-        var car = { name : '소나타', price : 50000 };
-        var products = [
-            { id : 0, price : 70000, title : 'Blossom Dress' },
-            { id : 1, price : 50000, title : 'Springfield Shirt' },
-            { id : 2, price : 60000, title : 'Black Monastery' }
-        ];
-
-        document.querySelector(".item").innerHTML = car.name;
-        document.querySelector(".price").innerHTML = car.price + '$';
-
-        for(let i = 0; i < 3; i++) {
-            document.querySelectorAll(".card-title")[i].innerHTML = products[i].title;  
-            document.querySelectorAll(".card-price")[i].innerHTML = products[i].price;  
-        }
-    </script>
+    <form class="container my-5 form-group">
+        <p>상품선택</p>
+        <select class="form-select mt-2">
+            <option value="cap">모자</option>
+            <option value="shirt">셔츠</option>
+            <option value="pants">바지</option>
+        </select>
+    </form>
+    <form id="hide-form" class="container my-5 form-group form-hide">
+        <p>사이즈 선택</p>
+        <select class="form-select mt-2">
+            <option>95</option>
+            <option>100</option>
+            <option>105</option>
+        </select>
+    </form>
+    <div id="test">
+  
+    </div>
     <script src="Tab.js"></script>
+    <script src="Databinding.js"></script>
+    <script src="Select.js"></script>
 </body>
 </html>
