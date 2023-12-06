@@ -34,31 +34,13 @@
             <p>배송정보입니다. Shipping</p>
         </div>
     </div> 
-    <div class="card-group container">
-        <div class="card">
-            <img src="https://via.placeholder.com/600">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-price">가격 : 70000</p>
-                <button class="btn btn-danger">주문하기</button>
-            </div>
+    <div class="container">
+        <div class="row">
+            
         </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/600">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-price">가격 : 70000</p>
-                <button class="btn btn-danger">주문하기</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/600">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-price">가격 : 70000</p>
-                <button class="btn btn-danger">주문하기</button>
-            </div>
-        </div>
+    </div> 
+    <div style="display: flex; justify-content: center;" class="container">
+        <button class="btn btn-danger" id="more">더보기</button>
     </div>
     <form class="container my-5 form-group">
         <p>상품선택</p>
@@ -82,6 +64,34 @@
     <script src="Tab.js"></script>
     <script src="Databinding.js"></script>
     <script src="Select.js"></script>
-    <script src="level3_ps.js"></script>
+    <!-- <script src="level3_ps.js"></script> -->
+    <script>
+    document.querySelector('#more').addEventListener('click', seeMore)
+
+    let count = 1;
+
+    function seeMore() {
+        fetch(`https://codingapple1.github.io/js/more${count}.json`)
+        .then(res=>res.json())
+        .then((data)=>{
+            console.log(data);
+            data.forEach((a, i)=>{
+                let cardLayout = 
+                `<div class="col-sm-4">
+                    <img src="https://via.placeholder.com/600" class="w-100">
+                    <h5>${data[i].title}</h5>
+                    <p>가격 : ${data[i].price}</p>
+                </div>`;
+                document.querySelector('.row').insertAdjacentHTML('beforeend', cardLayout)
+
+            })
+            count++;
+        }).catch((err)=>{
+            console.log('앙 실패띠')
+            document.querySelector('#more').style.display = 'none';
+        })
+    }
+        
+    </script>
 </body>
 </html>

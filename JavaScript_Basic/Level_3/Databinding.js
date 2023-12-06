@@ -3,18 +3,29 @@ var car = { name : '소나타', price : 50000 };
 var products = [
     { id : 0, price : 70000, title : 'Blossom Dress' },
     { id : 1, price : 50000, title : 'Springfield Shirt' },
-    { id : 2, price : 60000, title : 'Black Monastery' }
+    { id : 2, price : 60000, title : 'Black Monastery' },
 ];
 
+for (let i = 0; i < products.length; i++) {
+
+    let cardLayout = `<div class="col-sm-4">
+    <img src="https://via.placeholder.com/600" class="w-100">
+    <h5>${products[i].title}</h5>
+    <p>가격 : ${products[i].price}</p>
+    </div>`
+    document.querySelector('.row').insertAdjacentHTML('beforeend', cardLayout)
+}
+
+
 // 배열 및 오브젝트 자료형에서 데이터를 꺼내서 HTML 삽입
-document.querySelector(".item").innerHTML = car.name;
-document.querySelector(".price").innerHTML = car.price + '$';
+// document.querySelector(".item").innerHTML = car.name;
+// document.querySelector(".price").innerHTML = car.price + '$';
 
 // 반복문으로 모든 데이터 출력 후 HTML에 삽입
-for(let i = 0; i < 3; i++) {
-    document.querySelectorAll(".card-title")[i].innerHTML = products[i].title;  
-    document.querySelectorAll(".card-price")[i].innerHTML = products[i].price;  
-}
+// for(let i = 0; i < 3; i++) {
+//     document.querySelectorAll(".card-title")[i].innerHTML = products[i].title;  
+//     document.querySelectorAll(".card-price")[i].innerHTML = products[i].price;  
+// }
 
 // forEach 반복문 사용법
 // var arr = [28, 30, 32];
