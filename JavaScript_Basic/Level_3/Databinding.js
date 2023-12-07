@@ -5,9 +5,60 @@ var products = [
     { id : 1, price : 50000, title : 'Springfield Shirt' },
     { id : 2, price : 60000, title : 'Black Monastery' },
 ];
+// 상품 가격 정렬 기능 (Sort 함수))
+document.querySelector('#priceSort').addEventListener('click', ()=>{
+    products.sort(function(a, b) {
+        return a.price - b.price;
+    });
+    document.querySelector('.row').innerHTML = ''
+    for (let i = 0; i < products.length; i++) {
+        let cardLayout = `<div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>${products[i].title}</h5>
+        <p>가격 : ${products[i].price}</p>
+        </div>`
+        document.querySelector('.row').insertAdjacentHTML('beforeend', cardLayout)
+    }
+})
 
+// 상품 이름 정렬 기능 
+document.querySelector('#nameSort').addEventListener('click', ()=>{
+    products.sort(function (a, b) {
+        return a.title > b.title ? 1 : -1;
+    });
+    console.log(products)
+    document.querySelector('.row').innerHTML = ''
+    for (let i = 0; i < products.length; i++) {
+        let cardLayout = `<div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>${products[i].title}</h5>
+        <p>가격 : ${products[i].price}</p>
+        </div>`
+        document.querySelector('.row').insertAdjacentHTML('beforeend', cardLayout)
+    }
+})
+
+// 6만원 이하로
+document.querySelector('#filter').addEventListener('click', ()=>{
+    let arr = products.filter(function (a) {
+        return a.price <= 60000;
+    })
+    console.log(arr)
+    document.querySelector('.row').innerHTML = ''
+    for (let i = 0; i < arr.length; i++) {
+        let cardLayout = `<div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100">
+        <h5>${arr[i].title}</h5>
+        <p>가격 : ${arr[i].price}</p>
+        </div>`
+        document.querySelector('.row').insertAdjacentHTML('beforeend', cardLayout)
+    }
+})
+
+
+
+// 카드 레이아웃 생성
 for (let i = 0; i < products.length; i++) {
-
     let cardLayout = `<div class="col-sm-4">
     <img src="https://via.placeholder.com/600" class="w-100">
     <h5>${products[i].title}</h5>
@@ -15,7 +66,6 @@ for (let i = 0; i < products.length; i++) {
     </div>`
     document.querySelector('.row').insertAdjacentHTML('beforeend', cardLayout)
 }
-
 
 // 배열 및 오브젝트 자료형에서 데이터를 꺼내서 HTML 삽입
 // document.querySelector(".item").innerHTML = car.name;
