@@ -5,6 +5,7 @@ var products = [
     { id : 1, price : 50000, title : 'Springfield Shirt' },
     { id : 2, price : 60000, title : 'Black Monastery' },
 ];
+
 // 상품 가격 정렬 기능 (Sort 함수))
 document.querySelector('#priceSort').addEventListener('click', ()=>{
     products.sort(function(a, b) {
@@ -38,24 +39,27 @@ document.querySelector('#nameSort').addEventListener('click', ()=>{
     }
 })
 
-// 6만원 이하로
-document.querySelector('#filter').addEventListener('click', ()=>{
-    let arr = products.filter(function (a) {
-        return a.price <= 60000;
+// <input>을 이용해 유저가 직접 가격을 입력해서 필터하는 기능
+document.querySelector('.price-input').addEventListener('input', (e)=>{
+    // Input 값 불러오기
+    let priceInput = e.target.value;
+    
+    // 필터링 버튼을 눌렀을 때 Input 값과 비교 후 화면 출력
+    document.querySelector('#filter').addEventListener('click', ()=>{
+        let arr = products.filter(function (a) {
+            return a.price <= priceInput;
+        })
+        document.querySelector('.row').innerHTML = ''
+        for (let i = 0; i < arr.length; i++) {
+            let cardLayout = `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${arr[i].title}</h5>
+            <p>가격 : ${arr[i].price}</p>
+            </div>`
+            document.querySelector('.row').insertAdjacentHTML('beforeend', cardLayout)
+        }
     })
-    console.log(arr)
-    document.querySelector('.row').innerHTML = ''
-    for (let i = 0; i < arr.length; i++) {
-        let cardLayout = `<div class="col-sm-4">
-        <img src="https://via.placeholder.com/600" class="w-100">
-        <h5>${arr[i].title}</h5>
-        <p>가격 : ${arr[i].price}</p>
-        </div>`
-        document.querySelector('.row').insertAdjacentHTML('beforeend', cardLayout)
-    }
 })
-
-
 
 // 카드 레이아웃 생성
 for (let i = 0; i < products.length; i++) {
