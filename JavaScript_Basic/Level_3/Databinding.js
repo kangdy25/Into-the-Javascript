@@ -65,11 +65,41 @@ document.querySelector('.price-input').addEventListener('input', (e)=>{
 for (let i = 0; i < products.length; i++) {
     let cardLayout = `<div class="col-sm-4">
     <img src="https://via.placeholder.com/600" class="w-100">
-    <h5>${products[i].title}</h5>
+    <h5 class="products-title">${products[i].title}</h5>
     <p>가격 : ${products[i].price}</p>
+    <button class="buy">구매</button>
     </div>`
     document.querySelector('.row').insertAdjacentHTML('beforeend', cardLayout)
 }
+
+$('.buy').click(function(e){
+    var title = $(e.target).siblings('h5').text();
+    if (localStorage.getItem('cart') != null ){
+        var readOn = JSON.parse(localStorage.cart);
+        if (readOn.includes(title) != true) {
+            readOn.push(title);
+            localStorage.setItem('cart', JSON.stringify(readOn));
+        } else {
+            alert('이미 선택된 제품입니다.')
+        }
+    } else {
+        localStorage.setItem('cart', JSON.stringify([title]))
+    }
+});
+
+// Local Storage에 데이터 삽입/읽기/제거
+// localStorage.setItem('name', 'Palmer')
+// localStorage.getItem('name')
+// localStorage.removeItem('name')
+
+// Object -> String (JSON 이용)
+// let numArr = [1, 2, 3];
+// let strNumArr = JSON.stringify(numArr);
+// console.log(typeof(strNumArr))
+
+// String -> Object (JSON 이용)
+// let arrNumArr = JSON.parse(strNumArr)
+// console.log(typeof(arrNumArr))
 
 // 배열 및 오브젝트 자료형에서 데이터를 꺼내서 HTML 삽입
 // document.querySelector(".item").innerHTML = car.name;
