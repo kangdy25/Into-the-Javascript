@@ -72,20 +72,37 @@ for (let i = 0; i < products.length; i++) {
     document.querySelector('.row').insertAdjacentHTML('beforeend', cardLayout)
 }
 
-$('.buy').click(function(e){
-    var title = $(e.target).siblings('h5').text();
-    if (localStorage.getItem('cart') != null ){
-        var readOn = JSON.parse(localStorage.cart);
-        if (readOn.includes(title) != true) {
-            readOn.push(title);
-            localStorage.setItem('cart', JSON.stringify(readOn));
+// $('.buy').click(function(e){
+//     var title = $(e.target).siblings('h5').text();
+//     if (localStorage.getItem('cart') != null ){
+//         var readOn = JSON.parse(localStorage.cart);
+//         if (readOn.includes(title) != true) {
+//             readOn.push(title);
+//             localStorage.setItem('cart', JSON.stringify(readOn));
+//         } else {
+//             alert('이미 선택된 제품입니다.')
+//         }
+//     } else {
+//         localStorage.setItem('cart', JSON.stringify([title]))
+//     }
+// });
+
+let buyClass = document.querySelectorAll('.buy')
+for (let i = 0; i < buyClass.length; i++)
+    buyClass[i].addEventListener('click', function(e){
+        var title = e.target.previousElementSibling.previousElementSibling.innerHTML;
+        if (localStorage.getItem('cart') != null ){
+            var readOn = JSON.parse(localStorage.cart);
+            if (readOn.includes(title) != true) {
+                readOn.push(title);
+                localStorage.setItem('cart', JSON.stringify(readOn));
+            } else {
+                alert('이미 선택된 제품입니다.')
+            }
         } else {
-            alert('이미 선택된 제품입니다.')
+            localStorage.setItem('cart', JSON.stringify([title]))
         }
-    } else {
-        localStorage.setItem('cart', JSON.stringify([title]))
-    }
-});
+    });
 
 // Local Storage에 데이터 삽입/읽기/제거
 // localStorage.setItem('name', 'Palmer')
