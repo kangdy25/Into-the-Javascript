@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Applemusic.css">
+    <script
+    src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="card-background">
+        <div class="card-box">
+            <img src="card1.png">
+        </div>
+        <div class="card-box">
+            <img src="card2.png">
+        </div>
+        <div class="card-box">
+            <img src="card3.png">
+        </div>
+    </div>    
+</body>
+<script>
+    $(window).scroll(function(){
+        let height = $(window).scrollTop();
+        console.log(height);
+        // 650~1150까지 스크롤바를 내리면,
+        // 첫째카드의 opacity 1~0으로 서서히 변경해주셈
+        let y = 1 / (650 - 1150) * height + (115 / 50)
+        let z = 0.1 / (650 - 1150) * height + (5650 / 5000)
+        $('.card-box').eq(0).css('opacity', y);
+        // 투명도 뿐만 아니라 카드가 0.9배 정도로 서서히 작아지는 것도 똑같이 구현해봅시다.  
+        console.log('z 사이즈는 ' + z)
+        $('.card-box').eq(0).css('transform', `scale( ${z})`)
+
+    });
+</script>
+</html>
