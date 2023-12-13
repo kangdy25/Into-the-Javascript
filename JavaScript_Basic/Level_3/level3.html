@@ -68,7 +68,32 @@
             <option>105</option>
         </select>
     </form>
+    <!-- 캐러셀 만들기 -->
+    <div style="overflow: hidden">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="car1.png" draggable="false">
+            </div>
+            <div class="slide-box">
+                <img src="car2.png" draggable="false">
+            </div>
+            <div class="slide-box">
+                <img src="car3.png" draggable="false">
+            </div>
+        </div>
+    </div> 
+    <div class="btn-slide">
+        <button class="before">이전</button>
+
+        <button id="slide-1" class="slide-btn" data-index="0">1</button>
+        <button id="slide-2" class="slide-btn" data-index="1">2</button>
+        <button id="slide-3" class="slide-btn" data-index="2">3</button>
+
+        <button class="after">다음</button>
+    </div>
+    <div style="margin-top: 100px;"></div>
     <div id="test"></div>
+    <script src="Carousel.js"> </script>
     <script src="Tab.js"></script>
     <script src="Databinding.js"></script>
     <script src="Select.js"></script>
