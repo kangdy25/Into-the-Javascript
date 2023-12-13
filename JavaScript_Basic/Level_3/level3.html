@@ -12,6 +12,7 @@
     <title>Document</title>
 </head>
 <body>
+<hr style="margin-top: 50px; margin-bottom: 50px;">
     <div class="container mt-3">
         <div class="card p-3">
             <span class="item">상품명</span>
@@ -34,6 +35,7 @@
             <p>배송정보입니다. Shipping</p>
         </div>
     </div> 
+        <hr style="margin-top: 50px; margin-bottom: 50px;">
     <div class="container">
         <div class="row">
             
@@ -51,23 +53,24 @@
     <div style="display: flex; justify-content: center; margin-top: 20px;" class="container">
             <input style="margin-right: 10px;" type="number" min="0" class="price-input">
             <button class="btn btn-primary" id="filter">가격 필터링</button>
-    </div>
-    <form class="container my-5 form-group">
-        <p>상품선택</p>
-        <select class="form-select mt-2">
-            <option value="cap">모자</option>
-            <option value="shirt">셔츠</option>
-            <option value="pants">바지</option>
-        </select>
-    </form>
-    <form id="hide-form" class="container my-5 form-group form-hide">
-        <p>사이즈 선택</p>
-        <select class="form-select mt-2">
-            <option>95</option>
-            <option>100</option>
-            <option>105</option>
-        </select>
-    </form>
+        </div>
+        <form class="container my-5 form-group">
+            <p>상품선택</p>
+            <select class="form-select mt-2">
+                <option value="cap">모자</option>
+                <option value="shirt">셔츠</option>
+                <option value="pants">바지</option>
+            </select>
+        </form>
+        <form id="hide-form" class="container my-5 form-group form-hide">
+            <p>사이즈 선택</p>
+            <select class="form-select mt-2">
+                <option>95</option>
+                <option>100</option>
+                <option>105</option>
+            </select>
+        </form>
+        <hr style="margin-top: 50px; margin-bottom: 50px;">
     <!-- 캐러셀 만들기 -->
     <div style="overflow: hidden">
         <div class="slide-container">
@@ -90,9 +93,17 @@
         <button id="slide-3" class="slide-btn" data-index="2">3</button>
 
         <button class="after">다음</button>
+    </div>        
+    <hr style="margin-top: 50px; margin-bottom: 50px;">
+    <div id="quiz" style="display: flex; justify-content: center; flex-direction: column;">
+        <h3 style="text-align: center; margin-bottom: 30px;">물에 빠지면 누구 구함?</h3>
+        <div style="display: flex; justify-content: center; margin-bottom: 30px;">
+            <button style=" margin-right: 30px;">와이프</button>
+            <button style="margin-right: 30px;">부모님</button>
+            <button >키우던 고양이</button>
+        </div>
+        <hr style="margin-bottom: 50px;">
     </div>
-    <div style="margin-top: 100px;"></div>
-    <div id="test"></div>
     <script src="Carousel.js"> </script>
     <script src="Tab.js"></script>
     <script src="Databinding.js"></script>
@@ -124,7 +135,21 @@
             document.querySelector('#more').style.display = 'none';
         })
     }
-        
+    </script>
+    <script>
+        document.querySelector('#quiz').addEventListener('click', (e)=>{
+            switch (e.target.innerHTML) {
+                case '와이프':
+                    alert('와이프를 사랑하시네요');
+                    break;
+                case '부모님':
+                    alert('효자네요');
+                    break;
+                case '키우던 고양이':
+                    alert('역시 사람보단 동물이 낫져');
+                    break;
+            }
+        })
     </script>
 </body>
 </html>

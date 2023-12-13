@@ -39,11 +39,16 @@ let start = 0;
 let isPressed = false; 
 let coordinate = 0;
 
-// 첫 번째 캐러셀
-$('.slide-box').eq(0).on('mousedown', (e)=>{
-    start = e.clientX;
-    isPressed = true;
-})
+// 캐러셀 별 마우스 다운시 시작좌표 설정 및 마우스 다운 이벤트 확인
+for (let i = 0; i < $('.slide-box').length; i++) {
+    $('.slide-box').eq(i).on('mousedown', (e)=>{
+        start = 0;
+        isPressed = true;
+        start = e.clientX;
+    })
+}
+
+// 첫 번째 캐러셀 스와이프 (왼쪽 X, 오른쪽 O)
 $('.slide-box').eq(0).on('mousemove', (e)=>{
     if (isPressed == true) {
         coordinate = e.clientX - start;
@@ -63,22 +68,17 @@ $('.slide-box').eq(0).on('mouseup', (e)=>{
     }
 })
 
+// 두 번째 캐러셀 스와이프 (왼쪽 O, 오른쪽 O)
 let coordinate2 = 0
-// 두 번째 캐러셀
-$('.slide-box').eq(1).on('mousedown', (e)=>{
-    start = 0;
-    isPressed = true;
-    start = e.clientX;
-})
 $('.slide-box').eq(1).on('mousemove', (e)=>{
     if (isPressed == true) {
         coordinate2 = e.clientX - start;
+        console.log("좌표 2은" + coordinate2)
         if (coordinate2 > 0) {
             $('.slide-container').css('transform', `translateX(calc(-100vw + ${coordinate2}px))`);
         } else if (coordinate2 < 0) {
             $('.slide-container').css('transform', `translateX(calc(-100vw + ${coordinate2}px))`);
         } 
-        console.log(coordinate2)
     }
 })
 $('.slide-box').eq(1).on('mouseup', (e)=>{
@@ -92,16 +92,12 @@ $('.slide-box').eq(1).on('mouseup', (e)=>{
     }
 })
 
+// 세 번째 캐러셀 스와이프 (왼쪽 O, 오른쪽 X)
 let coordinate3 = 0
-// 세 번째 캐러셀
-$('.slide-box').eq(2).on('mousedown', (e)=>{
-    start = 0;
-    isPressed = true;
-    start = e.clientX;
-})
 $('.slide-box').eq(2).on('mousemove', (e)=>{
     if (isPressed == true) {
         coordinate3 = e.clientX - start;
+        console.log("좌표 3은" + coordinate3)
         if (coordinate3 > 0) {
             $('.slide-container').css('transform', `translateX(calc(-200vw + ${coordinate3}px))`);
         } else if (coordinate3 < 0) {
@@ -111,9 +107,9 @@ $('.slide-box').eq(2).on('mousemove', (e)=>{
 })
 $('.slide-box').eq(2).on('mouseup', (e)=>{
     isPressed = false;
-    if (coordinate3 < -200) {
+    if (coordinate3 < 200) {
         $('.slide-container').css('transform', `translateX(-200vw)`)
-    } else {
+    }  else {
         $('.slide-container').css('transform', `translateX(-100vw)`)
     }
 })
