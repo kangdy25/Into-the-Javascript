@@ -1,3 +1,5 @@
+/////////////////// this, arrow function ///////////////////
+
 // 1. 간단한 메소드 만들기
 var person = {
     name: 'son',
@@ -27,3 +29,26 @@ document.getElementById('btn').addEventListener('click', (e)=>{
         console.log(e.target.innerHTML)
     }, 1000)
 });
+
+////////////////// variable ///////////////////
+
+// 다음 코드의 콘솔창 출력결과는 무엇일까요? (코드는 비밀^^) 
+// 1. error
+// 2. error
+// 3. 1
+// 4. 5
+
+// 콘솔창에 1초에 한번씩 1부터 5까지의 정수를 출력해주고 싶습니다. 
+for (let i = 1; i < 6; i++) { 
+    setTimeout(function() { console.log(i); }, i*1000 ); 
+}
+
+// 버튼을 누르면 모달창을 띄우고 싶습니다. 
+let btns = document.querySelectorAll('.btn');
+let modals = document.querySelectorAll('div');
+
+for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', ()=>{
+        modals[i].style.display = 'block';
+    })
+}
