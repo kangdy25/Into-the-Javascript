@@ -52,3 +52,25 @@ for (let i = 0; i < btns.length; i++) {
         modals[i].style.display = 'block';
     })
 }
+
+////////////////// Template Literal / Tagged Literal ///////////////////
+
+// 문제 1. 단어 순서를 바꾸는 해체분석기 제작하기
+var pants = 20;
+var socks = 100;
+`바지${pants} 양말${socks}`;
+
+function changeItem(string, variable1,variable2) {
+    console.log(string[1] + variable1 + string[0] + variable2); 
+}
+
+changeItem`바지${pants} 양말${socks}`;
+
+// 문제 2. 바지가 0개면 '바지다팔렸어요'라는 문자를 대신 표시해주고 싶습니다. 
+function advancedChangeItem(string, ...variable) {
+    if (variable[0] == 0) {
+        console.log(string[0] + " 다 팔렸어요" + string[1] + variable[1]);
+    }
+}
+
+advancedChangeItem`바지${pants} 양말${socks}`;
