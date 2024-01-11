@@ -74,3 +74,61 @@ function advancedChangeItem(string, ...variable) {
 }
 
 advancedChangeItem`바지${pants} 양말${socks}`;
+
+////////////////// Spread, Rest Parameter ///////////////////
+
+// 1. spread 문제 1 : 위 코드의 출력 결과는?
+// 답: ['김', '밥', 1, 2, 3] 
+
+// 2. spread 문제 2 : 대괄호가 가득한 위 코드의 출력 결과는?
+// 답: you
+
+// 3. default 파라미터 문제 1
+// 콘솔에 9 출력
+
+// 4. default 파라미터 문제 2
+// 콘솔에 15 출력
+
+// 5. array를 만들어주는 함수를 제작하고 싶습니다.
+function arr(...parameter){
+    return parameter
+}
+
+var newArray = arr(1,2,3,4,5);
+console.log(newArray); 
+
+// 6. 최댓값 구하기
+var numbers = [2,3,4,5,6,1,3,2,5,5,4,6,7];
+console.log(Math.max(...numbers));
+
+// 7. 글자를 알파벳순으로 정렬해주는 함수를 만들고 싶습니다. 
+function sorting(parameter){
+    console.log(...[...parameter].sort())
+}
+
+sorting('bear'); 
+
+// 8. 데이터마이닝 기능 만들기 
+function countLetter(parameter) {
+    let result = {};
+    console.log([...parameter]);
+    // forEach 반복문
+    // [[...parameter]].forEach((a)=>{
+    //     if (result[a] > 0) {
+    //         result[a]++
+    //     } else {
+    //         result[a] = 1;
+    //     }
+    // })
+
+    // for 반복문
+    for (let i = 0; i < [...parameter].length; i++) {
+        if (result[[...parameter][i]] > 0) {
+            result[[...parameter][i]]++;
+        } else {
+            result[[...parameter][i]] = 1;
+        }
+    }
+    console.log(result)
+}
+countLetter('aacbbb')
