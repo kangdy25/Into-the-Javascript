@@ -75,7 +75,7 @@ function advancedChangeItem(string, ...variable) {
 
 advancedChangeItem`바지${pants} 양말${socks}`;
 
-////////////////// Spread, Rest Parameter ///////////////////
+////////////////// Spread, Rest Parameter dd///////////////////
 
 // 1. spread 문제 1 : 위 코드의 출력 결과는?
 // 답: ['김', '밥', 1, 2, 3] 
