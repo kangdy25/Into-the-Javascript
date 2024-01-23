@@ -51,9 +51,6 @@ var 학생1 = new Student('Kim', 20);
 
 // 모든 array에 적용할 수 있는 함수를 직접 새로 만들려면 어떻게 해야할까요?
 var arr = [1,2,3];
-arr.remove3();
-
-console.log(arr); //[1,2]
 
 Array.prototype.remove3 = function() {
     for(let i = 0; i < this.length; i++) {
@@ -62,3 +59,6 @@ Array.prototype.remove3 = function() {
         }
     }
 }
+
+arr.remove3();
+console.log(arr); //[1,2]
