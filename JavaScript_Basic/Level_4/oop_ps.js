@@ -1,3 +1,5 @@
+//////////////////// Constructor / Prototype ////////////////////
+
 // 쇼핑몰에 쓸 상품데이터를 오브젝트로 여러 개 만들고 싶습니다. 
 function Item(clothes, money) {
     this.name = clothes;
@@ -62,3 +64,66 @@ Array.prototype.remove3 = function() {
 
 arr.remove3();
 console.log(arr); //[1,2]
+
+//////////////////// class / extends / getter / setter ////////////////////
+
+// 직접 class 구조 만들어보기
+class Dog {
+    constructor(types, colors) {
+        this.type = types;
+        this.color = colors;
+    }
+    // 고양이와 강아지 object들에 기능을 하나 추가하고 싶습니다
+    grow() {
+        if (this instanceof Cat) {
+            this.age++;
+        }
+    }
+}
+
+let dog1 = new Dog('말티즈', 'white');
+let dog2 = new Dog('진돗개', 'brown');
+
+// 이번엔 고양이 관련 object들을 만들고 싶습니다. 
+class Cat extends Dog {
+    constructor(types, colors, ages) {
+        super(types, colors);
+        this.age = ages;
+    }
+}
+
+let cat1 = new Cat('코숏', 'white', 5);
+let cat2 = new Cat('러시안블루', 'brown', 2);
+
+// get/set을 이용해봅시다
+class Unit {
+    constructor() {
+        this.hp = 100;
+        this.str = 5;
+    }
+    get battlePoint() {
+        return this.hp + this.str;
+    }
+    set heal(recovery) {
+        this.str += recovery;
+    }
+}
+// get/set을 이용해봅시다 2 
+var data = {
+    odd : [],
+    even : [],
+    save : function (...num) {
+        num.forEach((a) => {
+            if (a % 2 == 0) {
+                this.even.push(a);
+            } else {
+                this.odd.push(a);
+            }
+        })
+    },
+    get sorting() {
+        let sortResult = [...this.even, ...this.odd];
+        sortResult.sort((a, b)=>a - b);
+        return sortResult;
+    }
+}

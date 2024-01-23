@@ -60,3 +60,19 @@ class Dad extends Grandfather {
 
 let grandfather1 = new Grandfather('석열');
 let dad1 = new Dad('동훈');
+
+// getter / setter
+
+// get은 데이터를 꺼낼 때 (return 필수)
+// set은 데이터를 변경할 때 (prameter 1개 필수)
+// get/set 쓰면 등호로 데이터를 입력할 수 있음
+let person = {
+    name : 'Park',
+    age : 30,
+    get nextAge() {
+        return this.age + 1;
+    },
+    set setAge(ages) {
+        this.age = parseInt(ages);
+    }
+}
