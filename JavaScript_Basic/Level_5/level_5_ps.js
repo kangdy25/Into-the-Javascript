@@ -68,3 +68,17 @@ promise.then((data)=>{
 }).then((data2)=>{
     console.log(data2)
 })
+
+////////////// Async / Await  //////////////
+let btn = document.querySelector('#btn');
+let clickPromise = new Promise((success, fail)=>{
+    btn.addEventListener('click', ()=>{
+        success();
+    })
+})
+async function clicks() {
+    await clickPromise;
+    console.log('성공했어요')
+}
+
+clicks();

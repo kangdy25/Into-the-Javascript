@@ -36,3 +36,14 @@ promise2.then(function(){
 }).catch(function(){
     console.log('힝 실패 ㅠㅠ')
 });
+
+// async / await
+async function plus(){
+    let oper = new Promise((success, fail)=>{
+      let result = 1 + 1;
+      success(result);
+    });
+    let result = await oper;
+    console.log(result)
+  }
+  plus();
