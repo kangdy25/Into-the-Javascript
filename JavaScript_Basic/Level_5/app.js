@@ -10,7 +10,6 @@ var name = 'Kim';
 var age = 30;
 
 var obj = { name : name, age : age };
-var obj = { name, age }
 
 // Promise
 let promise1 =  new Promise(function(success, fail){
@@ -40,10 +39,82 @@ promise2.then(function(){
 // async / await
 async function plus(){
     let oper = new Promise((success, fail)=>{
-      let result = 1 + 1;
-      success(result);
+        let result = 1 + 1;
+        success(result);
     });
     let result = await oper;
     console.log(result)
-  }
-  plus();
+}
+plus();
+
+// Loop Statement
+[1, 2, 3].forEach(); // Array
+
+class Parent {
+
+}
+Parent.prototype.name = 'Park';
+
+var object = new Parent();
+
+for (var key in object) {
+    if (object.hasOwnProperty(key)) {
+        console.log(object[key]);
+    }
+} // Object
+
+let array = [2, 3, 4, 5]
+for (var element of array) {
+    console.log(element)
+} // Iterable
+
+// Symbol
+var weight = Symbol('내 진짜 몸무게');
+let height = Symbol('내 진짜 키');
+
+var person = { name : 'Kim' };
+person.weight = 100;
+
+person[weight] = 200;
+person[height] = 180;
+
+console.log(person);
+
+var symbolA = Symbol.for('설명1');
+var symbolB = Symbol.for('설명1');
+console.log(symbolA === symbolB);
+
+var arrays = [2,3,4];
+console.log(arrays[Symbol.iterator]);
+
+// Map / Set
+// Map
+var person = new Map();
+person.set('age', 20);
+
+person.get('age'); //자료 꺼내는 법
+person.delete('age'); //자료 삭제하는 법
+person.size; //자료 몇갠지 알려줌
+
+//Map자료 반복문 돌리기
+for (var key of person.keys() ){
+    console.log(key)
+}
+
+//자료를 직접 집어넣고 싶으면
+
+var person = new Map([
+    ['age', 20],
+    ['name', 'Kim']
+]); 
+
+// Set
+var checkPerson = new Set([ 'john' , 'tom', 'andy', 'tom' ]);
+
+checkPerson.add('sally'); //자료더하기 
+checkPerson.has('tom'); //자료있는지 확인
+checkPerson.size;  //자료 몇갠지 세기
+
+var ang = [ 'john' , 'tom', 'andy', 'tom' ];
+var ang2 = new Set(ang); //Array를 Set으로 바꾸기
+ang = [...ang2]  //Set을 Array로 바꾸기

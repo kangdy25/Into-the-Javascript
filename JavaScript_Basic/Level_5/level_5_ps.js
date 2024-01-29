@@ -82,3 +82,44 @@ async function clicks() {
 }
 
 clicks();
+
+////////////// Loop Statement  //////////////
+
+// Q1. for of 반복문을 이용해서 2단부터 9단까지의 구구단을 콘솔창에 한번 출력해보십시오.
+let item = [1,2,3,4,5,6,7,8,9] 
+let item2 = [2,3,4,5,6,7,8,9] 
+
+// for (var i of item2) {
+//     for (var j of item) {
+//         console.log(i + ' * ' + j + ' = ' + i*j )
+//     }
+// }
+
+// Q2. 어떤 놈이 object자료의 key값에 오타를 섞어놨습니다.
+var products = [
+    {
+        name1 : 'chair',
+        price1 : 7000,
+    },
+    {
+        name2 : 'sofa',
+        price : 5000,
+    },
+    {
+        name1 : 'desk',
+        price3 : 9000,
+    },
+]; 
+
+for (let key in products) {
+    for (let key2 in products[key]) {
+        if (isNaN(parseInt(key2.slice(-1))) == false ) {
+            let newValue = products[key][key2];
+            let newKey = key2.slice(0, -1);
+            products[key][newKey] = newValue;
+
+            delete products[key][key2];
+        }
+    }
+}
+console.log(products)
