@@ -48,7 +48,7 @@ async function plus(){
 plus();
 
 // Loop Statement
-[1, 2, 3].forEach(); // Array
+// [1, 2, 3].forEach(); // Array
 
 class Parent {
 
@@ -118,3 +118,29 @@ checkPerson.size;  //자료 몇갠지 세기
 var ang = [ 'john' , 'tom', 'andy', 'tom' ];
 var ang2 = new Set(ang); //Array를 Set으로 바꾸기
 ang = [...ang2]  //Set을 Array로 바꾸기
+
+// Web Components
+class customClass extends HTMLElement {
+    connectedCallback() {
+        let name = this.getAttribute('name')
+        this.attachShadow({mode : 'open'});
+        this.shadowRoot.append(template1.content.cloneNode(true));
+        
+        let el = this.shadowRoot.querySelector('label');
+        el.addEventListener('click', function(){
+            console.log('클릭함');
+        })
+    }
+    static get observedAttributes() {
+        return ['name']
+    }
+    attributeChangedCallback() {
+        console.log(this.getAttribute('name'))
+    }
+}
+
+customElements.define('custom-input', customClass);
+
+// Shadow DOM
+document.querySelector('.mordor').attachShadow({mode : 'open'});
+document.querySelector('.mordor').shadowRoot.innerHTML = '<p>심연에서 왔도다</p>'
