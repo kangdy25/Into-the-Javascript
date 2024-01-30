@@ -144,3 +144,24 @@ customElements.define('custom-input', customClass);
 // Shadow DOM
 document.querySelector('.mordor').attachShadow({mode : 'open'});
 document.querySelector('.mordor').shadowRoot.innerHTML = '<p>심연에서 왔도다</p>'
+
+// Optional Chaining / Nullish Coalescing Operator
+// "중첩된 object 자료에서 에러없이 안전하게 데이터를 꺼낼 때 사용한다" 
+var user = {
+    name : 'kim',
+    age : 20
+}
+
+console.log(user.name);
+console.log(user?.name);
+
+var user = {
+    name : 'kim',
+    age : { value : 20 }
+}
+
+console.log(user.age1?.value1) // 에러는 안남 매우 안전
+
+var ohno;
+
+console.log(ohno ?? '로딩중')
