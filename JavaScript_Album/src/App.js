@@ -4,18 +4,15 @@ import { request } from "./components/Api.js";
 
 export default function App($app) {
     this.state = {
-        currentTab: 'all',
+        currentTab: window.location.pathname.replace('/', '') || 'all',
         photos: [],
     }
     const tabBar = new TabBar({
         $app,
         initialState: '',
         onClick: async (name) => {
-            this.setState({
-                ...this.state,
-                currentTab: name,
-                photos: await request(name === 'all'? '' : name)
-            })
+            history.pushState(null, `${name} 사진`, name);
+            this.updateContent(name);
         }
     });
     const content = new Content({
@@ -29,16 +26,27 @@ export default function App($app) {
         content.setState(this.state.photos)
     }
 
-    const init = async () => {
+    this.updateContent = async (tabName) => {
         try {
-            const initialPhotos = await request();
+            const currentTab = tabName === 'all' ? '' : tabName
+            const photos = await request(currentTab);
             this.setState({
                 ...this.state,
-                photos: initialPhotos
+                currentTab: tabName,
+                photos: photos
             })
         } catch (err) {
             console.log(err)
         }
+    }
+
+    window.addEventListener('popstate', async () => {
+        this.updateContent(window.location.pathname.replace('/', ''));
+    })
+
+    const init = async () => {
+        this.updateContent(this.state.currentTab );
+
     }
 
     init()
